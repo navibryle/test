@@ -16,6 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django_ap import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login', views.index, name="index"),
+    path('signup', views.createUser, name="createUser"),
+    path('login/gethabbits', views.get_items, name="get_items"),
+    path('login/addhabbits', views.add_items, name="add_items"),
+    path('login/doneHabbit', views.doneItems, name="doneItems"),
+    path('login/getDoneHabbit', views.getDoneItems, name="getDoneItems")
+    
 ]
